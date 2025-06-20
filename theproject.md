@@ -16,14 +16,14 @@ title: The Project
 
 The aim of this project is to investigate two significant historical fortresses located in the [Romagna](https://it.wikipedia.org/wiki/Romagna) region: the [Rocca di Imola](https://it.wikipedia.org/wiki/Rocca_sforzesca_di_Imola) and the [Rocca di Ravaldino](https://it.wikipedia.org/wiki/Rocca_di_Ravaldino), both of which are closely linked to the figure of [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) — an Italian noblewoman, Countess of [Forlì](https://en.wikipedia.org/wiki/Forl%C3%AC), and Lady of [Imola](https://en.wikipedia.org/wiki/Imola) during the late 15th century.
 
-The project focuses on enriching the [ArCo](http://wit.istc.cnr.it/arco) Knowledge Graph by identifying and filling gaps in the available RDF data concerning these two sites. 
-This was achieved through a combination of SPARQL querying, semantic reasoning, and the use of [ChatGPT](https://chatgpt.com/) and [Gemini](https://gemini.google.com/app?hl=it) as Large Language Models (LLMs) to reconstruct missing or implicit historical knowledge.
+The project focuses on **enriching the [ArCo](http://wit.istc.cnr.it/arco) Knowledge Graph** by identifying and filling gaps in the available RDF data concerning these two sites. 
+This was achieved through a combination of **SPARQL querying**, **semantic reasoning**, and the use of [ChatGPT](https://chatgpt.com/) and [Gemini](https://gemini.google.com/app?hl=it) as **Large Language Models (LLMs)** to reconstruct missing or implicit historical knowledge.
 
 ***
 
 # Areas of Enrichment
 
-A new set of RDF triples was proposed to enhance the existing representation of the two fortresses in the ArCo KG, specifically addressing the following aspects:
+A new set of **RDF triples** was proposed to enhance the existing representation of the two fortresses in the **ArCo KG**, specifically addressing the following aspects:
 
 - **Depiction**: associating the sites and the historical figure with relevant visual documentation
 

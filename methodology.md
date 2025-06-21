@@ -18,15 +18,15 @@ This section outlines the approach and steps taken to investigate the **architec
 The project was carried out through a series of structured phases, combining **semantic technologies** and **historical research**.
 Click on the highlighted sections below to explore each stage of the process in detail.
 
-- **ArCo**
+- [**ArCo**](#step-1-arco)
 
-- **SPARQL**
+- [**SPARQL**](#step-2-sparql)
 
-- **Large Language Models**
+- [**Large Language Models**](#step-3-large-language-models)
 
-- **RDF Triples**
+- [**RDF Triples**](#step-4-rdf-triples)
 
-- **GitHub**
+- [**GitHub**](#step-5-github)
 
 ***
 
@@ -54,6 +54,24 @@ This querying process also enables the discovery of **semantic relationships** b
 
 **SPARQL (SPARQL Protocol and RDF Query Language)** is a query language used to access and manipulate data stored in the **RDF (Resource Description Framework)** format.
 It allows users to retrieve, filter, and explore structured data from knowledge graphs by writing specific query patterns.
+
+<details>
+  <summary><strong>SPARQL queries syntax:</strong> ⬇️</summary>
+
+A typical SPARQL query can include the following components:
+
+<ol>
+    <li><strong>FILTER</strong>: Applies conditions to narrow down the results based on specific criteria.</li>
+    <li><strong>LIMIT</strong>: Sets a maximum number of results to be returned.</li>
+    <li><strong>ORDER BY</strong>: Arranges the results according to one or more selected variables.</li>
+    <li><strong>PREFIX</strong>: Declares abbreviations for long URIs, making the query more readable and concise.</li>
+    <li><strong>REGEX</strong>: Uses regular expressions to filter results based on pattern matching.</li>
+    <li><strong>SELECT</strong>: Identifies the variables that should be included in the output.</li>
+    <li><strong>UNION</strong>: Allows for the combination of multiple patterns, treating them as valid alternatives.</li>
+    <li><strong>WHERE</strong>: Specifies the triple patterns to be matched against the RDF dataset.</li>
+  </ol>
+
+</details>
 
 ***
 

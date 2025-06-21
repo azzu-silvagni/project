@@ -80,19 +80,20 @@ Among the four properties, we selected <mark>the third one</mark>, as it was the
 From this, an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap;">
-PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;<br><br>
-CONSTRUCT {<br>
-&nbsp;&nbsp;&lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt; foaf:depiction &lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt; .<br>
-}<br>
-WHERE {<br>
-&nbsp;&nbsp;FILTER(REGEX("Caterina Sforza", "Caterina Sforza", "i"))<br>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+CONSTRUCT {
+  <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530> foaf:depiction <https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg> .
+}
+WHERE {
+  FILTER(REGEX("Caterina Sforza", "Caterina Sforza", "i"))
 }
 </div>
 
-![First Triple](triple1)
+<img src="/project/assets/img/triple1.jpg" alt="First Triple">
 
-| Subject      | Predicate | Object |
-| ----------- | ----------- | ------- |
+| Subject | Predicate | Object |
+|--------|-----------|--------|
 | Caterina Sforza | foaf:depiction | Ritratto di Caterina Sforza |
-| <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530> | <http://xmlns.com/foaf/0.1/> | <https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg> |
+| `<https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530>` | `<http://xmlns.com/foaf/0.1/>` | `<https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg>` |
 

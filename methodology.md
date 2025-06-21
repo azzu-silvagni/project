@@ -28,6 +28,8 @@ Click on the highlighted sections below to explore each stage of the process in 
 
 - **GitHub**
 
+***
+
 # Step 1: ArCo
 
 ## What is the ArCo Ontology?
@@ -44,6 +46,8 @@ Through this editor, it is possible to write and run SPARQL queries to access, e
 
 This querying process also enables the discovery of **semantic relationships** between different cultural heritage entities, as defined by the **[ArCo](http://wit.istc.cnr.it/arco/) ontologies**.
 
+***
+
 # Step 2: SPARQL
 
 ## What is SPARQL?
@@ -51,7 +55,20 @@ This querying process also enables the discovery of **semantic relationships** b
 **SPARQL (SPARQL Protocol and RDF Query Language)** is a query language used to access and manipulate data stored in the **RDF (Resource Description Framework)** format.
 It allows users to retrieve, filter, and explore structured data from knowledge graphs by writing specific query patterns.
 
+***
+
 # Step 3: Large Language Models
+
+Large Language Models (LLMs) are a type of [artificial intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence) system built to process, generate, and understand human language. They are typically developed using **[deep learning](https://en.wikipedia.org/wiki/Deep_learning) methods** and trained on extensive [**text datasets**](https://en.wikipedia.org/wiki/Data_set).
+
+As part of our project, the following large language models were used: 
+
+| ChatGPT    | Gemini |
+| ----------- | ----------- |
+| [ChatGPT](https://chatgpt.com/) is an AI-powered conversational model created by [OpenAI](https://openai.com/), built on the GPT (Generative Pretrained Transformer) architecture. It’s designed to **interpret and produce human-like text**. Trained on a wide range of textual data, it can **engage in dialogue**, **create content**, and **support a variety of tasks**.      | [Gemini](https://gemini.google.com/?hl=en) is a collection of AI models developed by [Google DeepMind](https://deepmind.google/), aimed at combining the strengths of large language models with **advanced reasoning** and **problem-solving skills**. It leverages state-of-the-art techniques to improve the model's capacity to **generate nuanced, context-aware responses** across a wide range of topics.       |
+| ![Logo ChatGPT](logo_chat1.png) | ![Logo Gemini](logo_gemini1.png) |
+
+***
 
 # Step 4: RDF Triples
 
@@ -66,10 +83,14 @@ RDF expresses data in the form of **triples**, which are the basic building bloc
 
 Each RDF triple consists of three parts:
 
-- **Subject**: the entity being described
+1. **Subject**: the entity being described
 
-- **Predicate**: the property or relationship that connects the subject to something else.
+2. **Predicate**: the property or relationship that connects the subject to something else.
 
-- **Object**: The value or target of the relationship. This can be either a literal (like a string or a date) or another resource.
+3. **Object**: The value or target of the relationship. This can be either a literal (like a string or a date) or another resource.
+
+***
 
 # Step 5: GitHub
+
+[GitHub](https://github.com/) is an online platform that enables **code management and collaboration** using the **[Git](https://git-scm.com/) version control system**. Developers can host their projects in repositories, manage changes over time, and collaborate through branching. Core features include pull requests for reviewing and merging code, issue tracking for handling tasks and bugs, and **GitHub Actions** for automating workflows like testing and deployment. The platform supports both public and private repositories.

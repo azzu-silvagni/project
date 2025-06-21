@@ -68,6 +68,21 @@ As part of our project, the following large language models were used:
 | [ChatGPT](https://chatgpt.com/) is an AI-powered conversational model created by [OpenAI](https://openai.com/), built on the GPT (Generative Pretrained Transformer) architecture. It’s designed to **interpret and produce human-like text**. Trained on a wide range of textual data, it can **engage in dialogue**, **create content**, and **support a variety of tasks**.      | [Gemini](https://gemini.google.com/?hl=en) is a collection of AI models developed by [Google DeepMind](https://deepmind.google/), aimed at combining the strengths of large language models with **advanced reasoning** and **problem-solving skills**. It leverages state-of-the-art techniques to improve the model's capacity to **generate nuanced, context-aware responses** across a wide range of topics.       |
 | ![Logo ChatGPT](logo_chat1.png) | ![Logo Gemini](logo_gemini1.png) |
 
+## Prompting Techniques
+
+Prompting techniques are strategies used to steer AI models—especially language models—toward generating **specific and relevant outputs**. These methods play a key role in ensuring that the AI responds accurately and appropriately to given inputs.
+
+<details>
+  <summary><strong>Prompting techniques include:</strong> ⬇️</summary>
+
+- **Zero-shot prompting**: Instructing the model to complete a task without providing any examples. This approach depends entirely on the model’s general training and prior knowledge.
+
+- **Few-shot prompting**: Supplying a handful of examples or contextual cues to help the model understand the desired response style or structure.
+
+- **Multimodal Chain-of-Thought**: Integrating multiple types of data (text, images, audio) to enhance reasoning.
+
+</details>
+
 ***
 
 # Step 4: RDF Triples
@@ -79,9 +94,10 @@ It is used to describe resources — such as people, places, artworks, or histor
 
 RDF expresses data in the form of **triples**, which are the basic building blocks of a knowledge graph.
 
-## Structure of an RDF Triple
+<details>
+  <summary><strong>Structure of an RDF triple</strong> ⬇️</summary>
 
-Each RDF triple consists of three parts:
+<p>Each RDF triple consists of three parts:</p>
 
 1. **Subject**: the entity being described
 
@@ -89,8 +105,12 @@ Each RDF triple consists of three parts:
 
 3. **Object**: The value or target of the relationship. This can be either a literal (like a string or a date) or another resource.
 
+</details>
+
 ***
 
 # Step 5: GitHub
 
 [GitHub](https://github.com/) is an online platform that enables **code management and collaboration** using the **[Git](https://git-scm.com/) version control system**. Developers can host their projects in repositories, manage changes over time, and collaborate through branching. Core features include pull requests for reviewing and merging code, issue tracking for handling tasks and bugs, and **GitHub Actions** for automating workflows like testing and deployment. The platform supports both public and private repositories.
+
+![Logo GitHub](logo_github.png)

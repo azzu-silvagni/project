@@ -144,9 +144,9 @@ WHERE {
 
 This helped us identify two resources relevant to our topic:
 
-**Rocca di Imola** ➡️ <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
+**Rocca di Imola** ⤵️ <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
 
-**Rocca di Ravaldino** ➡️ <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino>
+**Rocca di Ravaldino** ⤵️ <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino>
 
 We selected these as our core case studies, due to their **historical connection** to Caterina Sforza.
 
@@ -196,7 +196,7 @@ The result was false. This result justifies the **creation of new RDF triples**,
 We ran a series of **SPARQL ASK queries** to verify whether the two fortresses were already associated with certain semantic properties in the ArCo Knowledge Graph.
 This helped us detect gaps in the data and justify the use of LLMs and new RDF triples to enrich the graph.
 
-1. **Temporal designation**
+- **Temporal designation**
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -213,7 +213,7 @@ ASK {
   }
 </div>
 
-2. **Committent**
+- **Committent**
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/>
@@ -230,7 +230,7 @@ ASK {
   }
 </div>
 
-3. **Cultural Events**
+- **Cultural Events**
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -248,7 +248,7 @@ ASK {
 }
 </div>
 
-All the results were <mark>false</mark>.
+As already stated before, all the results were <mark>false</mark>.
 
 ## Use of LLMs
 

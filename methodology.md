@@ -96,7 +96,7 @@ Prompting techniques are strategies used to steer AI models—especially languag
 <ol>
     <li><strong>Zero-shot Prompting</strong>: Instructing the model to complete a task without providing any examples. This approach depends entirely on the model’s general training and prior knowledge.</li>
     <li><strong>Few-shot Prompting</strong>: Supplying a handful of examples or contextual cues to help the model understand the desired response style or structure.</li>
-    <li><strong>Chain-of-thought Prompting</strong>: Integrating multiple types of data (text, images, audio) to enhance reasoning.</li>
+    <li><strong>Chain-of-thought Prompting</strong>: Encouraging the model to generate intermediate reasoning steps before producing a final answer.</li>
   </ol>
 
 </details>

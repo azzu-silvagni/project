@@ -41,7 +41,7 @@ WHERE {
 
 The result consisted in the retrieval of the following **agent entity**: <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530>
 
-![Agent Caterina Sforza](agent_caterina_arco)
+![Agent Caterina Sforza](agent_caterina.png)
 
 ## Depiction of Caterina Sforza
 
@@ -73,7 +73,7 @@ The query returned the following **cultural properties**:
 
 Among the four properties, we selected <mark>the third one</mark>, as it was the only one featuring a colour painting.
 
-![Portrait Caterina Sforza](portrait_caterina_arco)
+![Portrait Caterina Sforza](ritratto_caterina.png)
 
 ## Triple n.1
 
@@ -94,7 +94,7 @@ WHERE {
 </div>
 
 <!-- Immagine -->
-<img src="/project/assets/img/triple1.jpg" alt="First Triple" style="max-width: 100%; height: auto; margin-bottom: 1em;">
+<img src="first_triple.png" alt="First Triple" style="max-width: 100%; height: auto; margin-bottom: 1em;">
 
 <!-- Tabella con colonne strette e avvolgimento testo -->
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">

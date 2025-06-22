@@ -11,7 +11,11 @@ title: The Project
   <a href="conclusions.html">Conclusions</a>
 </div>
 
-# Project Goals and Scope
+# THE PROJECT
+
+***
+
+## Project Goals and Scope
 
 The aim of this project is to investigate two significant historical fortresses located in the [Romagna](https://it.wikipedia.org/wiki/Romagna) region: the [Rocca di Imola](https://it.wikipedia.org/wiki/Rocca_sforzesca_di_Imola) and the [Rocca di Ravaldino](https://it.wikipedia.org/wiki/Rocca_di_Ravaldino), both of which are closely linked to the figure of [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) — an Italian noblewoman, Countess of [Forlì](https://en.wikipedia.org/wiki/Forl%C3%AC), and Lady of [Imola](https://en.wikipedia.org/wiki/Imola) during the late 15th century.
 
@@ -20,7 +24,7 @@ This was achieved through a combination of **SPARQL querying**, **semantic reaso
 
 ***
 
-# Areas of Enrichment
+## Areas of Enrichment
 
 A new set of **RDF triples** was proposed to enhance the existing representation of the two fortresses in the **ArCo KG**, specifically addressing the following aspects:
 

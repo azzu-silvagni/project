@@ -13,6 +13,24 @@ title: The Process
 
 # THE PROCESS
 
+This section outlines all the specific steps taken to investigate the **architectural heritage** of **Romagna**, focusing on the **Rocca di Ravaldino** and the **Rocca di Imola**, historically linked to **Caterina Sforza**.
+
+Click on the highlighted sections below to explore each step of the process in detail.
+
+- [**Identifying the Topic**](#identifying-the-topic)
+
+- [**Depiction of Caterina Sforza**](#depiction-of-caterina-sforza)
+
+- [**Exploring the Fortresses**](#exploring-the-fortresses)
+
+- [**Ordering the Fortresses**](#ordering-the-fortresses)
+
+- [**Checking for Links to Caterina Sforza**](#checking-for-links-to-caterina-sforza)
+
+- [**Checking for other Missing Information**](#checking-for-other-missing-information)
+
+- [**Use of LLMs**](#use-of-llms)
+
 ## Identifying the Topic
 
 The project began by verifying the existence of Caterina Sforza within the ArCo knowledge graph. To do this, we executed a **first SPARQL ASK** query to check whether the resource was present:
@@ -75,7 +93,7 @@ Among the four properties, we selected <mark>the third one</mark>, as it was the
 
 ![Portrait Caterina Sforza](ritratto_caterina.png)
 
-## Triple n.1
+## First Triple
 
 From this, an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
 

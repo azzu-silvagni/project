@@ -79,21 +79,42 @@ Among the four properties, we selected <mark>the third one</mark>, as it was the
 
 From this, an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
 
-<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap;">
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+<!-- QUERY BOX - con wrapping migliorato -->
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
 
 CONSTRUCT {
-  <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530> foaf:depiction <https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg> .
+  &lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;
+  foaf:depiction
+  &lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt; .
 }
 WHERE {
   FILTER(REGEX("Caterina Sforza", "Caterina Sforza", "i"))
 }
 </div>
 
-<img src="/project/assets/img/triple1.jpg" alt="First Triple">
+<!-- Immagine -->
+<img src="/project/assets/img/triple1.jpg" alt="First Triple" style="max-width: 100%; height: auto; margin-bottom: 1em;">
 
-| Subject | Predicate | Object |
-|--------|-----------|--------|
-| Caterina Sforza | foaf:depiction | Ritratto di Caterina Sforza |
-| `<https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530>` | `<http://xmlns.com/foaf/0.1/>` | `<https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg>` |
-
+<!-- Tabella con colonne strette e avvolgimento testo -->
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Caterina Sforza</td>
+      <td>foaf:depiction</td>
+      <td>Ritratto di Caterina Sforza</td>
+    </tr>
+    <tr>
+      <td><code>&lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;</code></td>
+      <td><code>&lt;http://xmlns.com/foaf/0.1/&gt;</code></td>
+      <td><code>&lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt;</code></td>
+    </tr>
+  </tbody>
+</table>

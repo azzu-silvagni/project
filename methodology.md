@@ -13,7 +13,7 @@ title: Methodology
 
 # METHODOLOGY
 
-This section outlines the approach and steps taken to investigate the **architectural heritage** of **Romagna**, focusing on **two fortresses** historically linked to **Caterina Sforza**.
+This section outlines the approach and steps taken to investigate the **architectural heritage** of [**Romagna**](https://en.wikipedia.org/wiki/Romagna), focusing on **two fortresses** historically linked to [**Caterina Sforza**](https://en.wikipedia.org/wiki/Caterina_Sforza).
 
 The project was carried out through a series of structured phases, combining **semantic technologies** and **historical research**.
 Click on the highlighted sections below to explore each stage of the process in detail.

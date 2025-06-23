@@ -14,6 +14,8 @@ title: The Project
 # THE PROJECT
 
 ***
+![Rocche di Ravaldino e Imola](due_rocche.jpg)
+*Fortresses of Imola and Ravaldino in [Romagna](https://it.wikipedia.org/wiki/Romagna)*
 
 ## Project Goals and Scope
 

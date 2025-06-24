@@ -13,7 +13,7 @@ title: The Process
 
 # THE PROCESS
 
-This section outlines all the specific steps taken to investigate the **architectural heritage** of **Romagna**, focusing on the **Rocca di Ravaldino** and the **Rocca di Imola**, historically linked to **Caterina Sforza**.
+This section outlines all the specific steps taken to investigate the **architectural heritage** of [**Romagna**](https://en.wikipedia.org/wiki/Romagna), focusing on the [**Rocca di Ravaldino**](https://it.wikipedia.org/wiki/Rocca_di_Ravaldino) and the [**Rocca di Imola**](https://it.wikipedia.org/wiki/Rocca_sforzesca_di_Imola), historically linked to [**Caterina Sforza**](https://en.wikipedia.org/wiki/Caterina_Sforza).
 
 Click on the highlighted sections below to explore each step of the process in detail.
 
@@ -33,7 +33,7 @@ Click on the highlighted sections below to explore each step of the process in d
 
 ## Identifying the Topic
 
-The project began by verifying the existence of Caterina Sforza within the ArCo knowledge graph. To do this, we executed a **first SPARQL ASK** query to check whether the resource was present:
+The project began by verifying the existence of [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) within the [ArCo](https://dati.beniculturali.it/arco/index.php) knowledge graph. To do this, we executed a **first SPARQL ASK** query to check whether the resource was present:
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap;">
 PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
@@ -63,8 +63,8 @@ The result consisted in the retrieval of the following **agent entity**: <https:
 
 ## Depiction of Caterina Sforza
 
-Although Caterina Sforza exists in the ArCo knowledge graph as an Agent, she is not directly associated with any visual depiction.
-To address this gap, we executed a **SPARQL SELECT query** to search for visual properties that could be linked to her, such as portraits:
+Although [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) exists in the [ArCo](https://dati.beniculturali.it/arco/index.php) knowledge graph as an **Agent**, she is not directly associated with any **visual depiction**.
+To address this gap, we executed a **SPARQL SELECT query** to search for visual properties that could be linked to her, such as **portraits**:
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap;">
 PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
@@ -147,7 +147,7 @@ ORDER BY allows us to alphabetically sort the fortresses — useful for future s
 
 ## Checking for Links to Caterina Sforza
 
-To verify whether Caterina Sforza was already linked to the two fortresses in the ArCo Knowledge Graph, we used an **ASK query**.
+To verify whether [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) was already linked to the two fortresses in the [ArCo](https://dati.beniculturali.it/arco/index.php) Knowledge Graph, we used an **ASK query**.
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -163,14 +163,14 @@ ASK {
 }
 </div>
 
-The result was false. This result justifies the **creation of new RDF triples**, using both **LLM-generated content** and **SPARQL CONSTRUCT** to enrich the knowledge graph with new semantic relations.
+<mark>The result was false</mark>. This result justifies the **creation of new RDF triples**, using both **LLM-generated content** and **SPARQL CONSTRUCT** to enrich the knowledge graph with new semantic relations.
 
 ## Checking for other Missing Information
 
-We ran a series of **SPARQL ASK queries** to verify whether the two fortresses were already associated with certain semantic properties in the ArCo Knowledge Graph.
+We ran a series of **SPARQL ASK queries** to verify whether the two fortresses were already associated with certain semantic properties in the [ArCo](https://dati.beniculturali.it/arco/index.php) Knowledge Graph.
 This helped us detect gaps in the data and justify the use of LLMs and new RDF triples to enrich the graph.
 
-- **Temporal designation**
+- <mark>**Temporal designation**</mark>
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -187,7 +187,7 @@ ASK {
   }
 </div>
 
-- **Committent**
+- <mark>**Committent**</mark>
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/>
@@ -204,7 +204,7 @@ ASK {
   }
 </div>
 
-- **Cultural Events**
+- <mark>**Cultural Events**</mark>
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -222,7 +222,7 @@ ASK {
 }
 </div>
 
-As already stated before, all the results were <mark>false</mark>.
+As already stated before, <mark>all the results were false</mark>.
 
 ## Use of LLMs
 
@@ -236,21 +236,23 @@ As concerns the designation in time, we submitted the following **zero-shot prom
 
 With the aim of obtaining the most accurate and reliable information possible, we cross-checked the **construction dates** of the two fortresses using the following **online sources**:
 
-**Rocca di Ravaldino** ➡️ <https://turismoforlivese.it/it/arte-cultura/rocca-di-ravaldino/> 
+**Rocca di Ravaldino** ➡️ [Official website of Turismo Forlivese](https://turismoforlivese.it/it/arte-cultura/rocca-di-ravaldino/)
 
-**Rocca di Imola** ➡️ <https://imolamusei.it/rocca-sforzesca/> 
+**Rocca di Imola** ➡️ [Official website of Imola Musei](https://imolamusei.it/rocca-sforzesca/)
 
-After consulting these sources, we found that <mark>Gemini was accurate</mark> regarding the **Fortress of Ravaldino**, whereas <mark>ChatGPT provided incorrect information</mark>. In the case of the **Fortress of Imola**, <mark>Gemini was again correct</mark>, while ChatGPT, although not entirely inaccurate, offered a <mark>less precise response</mark>.
-
-The following screenshots show Gemini's and ChatGPT's anwers regarding the depiction in time: 
-
-![Screenshot Gemini Ravaldino Time](screen_gemini_ravaldino_time.png)
+The following screenshots show Gemini's and ChatGPT's anwers regarding the **depiction in time**: 
 
 ![Screenshot Chat Ravaldino Time](screen_chat_ravaldino_time.png)
 
-![Screenshot Gemini Imola Time](screen_gemini_imola_time.png)
+![Screenshot Gemini Ravaldino Time](screen_gemini_ravaldino_time.png)
+
+After consulting these sources, we found that <mark>Gemini was accurate</mark> regarding the **Fortress of Ravaldino**, whereas <mark>ChatGPT provided incorrect information</mark>.
 
 ![Screenshot Chat Imola Time](screen_chat_imola_time.png)
+
+![Screenshot Gemini Imola Time](screen_gemini_imola_time.png)
+
+In the case of the **Fortress of Imola**, <mark>Gemini was again correct</mark>, while ChatGPT, although not entirely inaccurate, offered a <mark>less precise response</mark>.
 
 ## Committent
 
@@ -289,7 +291,7 @@ ChatGPT's answer:
 
 ![Screenshot Chat Imola Committent](screen_chat_imola_comm.png)
 
-However, according to the [official website of Imola Musei](https://imolamusei.it/rocca-sforzesca/), both answers were wrong. We got the right answer through a zero-shot prompt.
+However, according to the [official website of Imola Musei](https://imolamusei.it/rocca-sforzesca/), <mark>both answers were wrong</mark>. We got the right answer through a new **zero-shot prompt**, which provided us a <mark>true answer</mark>. 
 
 ![Screenshot Imola Committent](screen_imola_comm.png)
 

@@ -31,6 +31,8 @@ Click on the highlighted sections below to explore each step of the process in d
 
 - [**Use of LLMs**](#use-of-llms)
 
+- [**Triples**](#triples)
+
 ## Identifying the Topic
 
 The project began by verifying the existence of [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) within the [ArCo](https://dati.beniculturali.it/arco/index.php) knowledge graph. To do this, we executed a **first SPARQL ASK** query to check whether the resource was present:
@@ -170,7 +172,7 @@ ASK {
 We ran a series of **SPARQL ASK queries** to verify whether the two fortresses were already associated with certain semantic properties in the [ArCo](https://dati.beniculturali.it/arco/index.php) Knowledge Graph.
 This helped us detect gaps in the data and justify the use of LLMs and new RDF triples to enrich the graph.
 
-- <mark>**Temporal designation**</mark>
+- **TEMPORAL DESIGNATION**
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -187,7 +189,7 @@ ASK {
   }
 </div>
 
-- <mark>**Committent**</mark>
+- **COMMITTENT**
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/>
@@ -204,7 +206,7 @@ ASK {
   }
 </div>
 
-- <mark>**Cultural Events**</mark>
+- **CULTURAL EVENTS**
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -254,7 +256,7 @@ After consulting these sources, we found that <mark>Gemini was accurate</mark> r
 
 In the case of the **Fortress of Imola**, <mark>Gemini was again correct</mark>, while ChatGPT, although not entirely inaccurate, offered a <mark>less precise response</mark>.
 
-## Committent
+### Committent
 
 As concerns the commissioner, we opted for **a combination of <mark>few-shot and chain-of-thought</mark> prompting** techniques.
 
@@ -324,6 +326,85 @@ ChatGPT's answer:
 ![Screenshot Chat Ravaldino Committent](screen_chat_ravaldino_comm.png)
 
 After cross-checking both answers with the [official website of Turismo Forlivese](https://turismoforlivese.it/it/arte-cultura/rocca-di-ravaldino/), we noticed that <mark>GhatGPT's answer was wrong</mark>, whereas <mark>Gemini's answer was true</mark>. 
+
+### Cultural Events
+
+To enrich the information related to the two fortresses, we searched for **relevant cultural events** within the [ArCo](https://dati.beniculturali.it/arco/index.php) ontology.
+We started by exploring the class arco:EventOrSituationInTime to retrieve existing cultural events in the [ArCo](https://dati.beniculturali.it/arco/index.php) Knowledge Graph.
+
+We used the following **SPARQL query** to retrieve a sample of available events:
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX arco: <https://w3id.org/arco/ontology/core/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?event ?label ?description
+WHERE {
+  ?event rdf:type arco:EventOrSituationInTime .
+  OPTIONAL { ?event rdfs:label ?label . }
+  OPTIONAL { ?event arco:description ?description . }
+}
+LIMIT 10
+</div>
+
+These were the results:
+
+![Screen Cultural Events](screen_cultural_events.png)
+
+We selected **three** of them that were **relevant and plausible** to associate with the [Rocca di Imola](https://it.wikipedia.org/wiki/Rocca_sforzesca_di_Imola) and the [Rocca di Ravaldino](https://it.wikipedia.org/wiki/Rocca_di_Ravaldino): 
+
+- **Cena medievale**
+
+- **Visita del castello**
+
+- **Corteo**
+
+After retrieving these events, we formulated a **zero-shot prompt** and submitted it to both [Gemini](https://gemini.google.com/?hl=it) and [ChatGPT](https://openai.com/index/chatgpt/), asking whether such activities could realistically take place at the [Rocca di Imola](https://it.wikipedia.org/wiki/Rocca_sforzesca_di_Imola) and the [Rocca di Ravaldino](https://it.wikipedia.org/wiki/Rocca_di_Ravaldino).
+
+Rocca di Ravaldino:
+
+> Among these cultural events: "Medieval Dinner, Visit to the Castle and Historical Procession", which one is possible to do in Ravaldino Fortress?
+
+![Screen Chat Ravaldino Events](screen_chat_ravaldino_events.png)
+
+![Screen Gemini Ravaldino Events](screen_gemini_ravaldino_events.png)
+
+Rocca di Imola: 
+
+> Among these cultural events: "Medieval Dinner, Visit to the Castle and Historical Procession", which one is possible to do in Imola Fortress?
+
+![Screen Chat Imola Events](screen_chat_imola_events.png)
+
+![Screen Gemini Imola Events](screen_gemini_imola_events.png)
+
+Both language models agreed that <mark>only one of the three events</mark>, the **visit to the castle**, was appropriate and realistic for both fortresses.
+
+### Relationship with Caterina Sforza
+
+We decided then to ask Gemini and ChatGPT if there is indeed a **historical connection** between [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) and the two fortresses using a **few-shot prompt**.
+
+> We are working on a project to enrich a cultural heritage knowledge graph using RDF triples. We need to verify whether there is a historical relationship between a specific person and a monument. Below are a few examples. Can you answer the final question using the same style?
+> 
+> Example 1
+> Q: Is there a historical link between Federico II and the Castello Svevo of Bari?
+> A: Yes. The Castello Svevo of Bari was rebuilt by Emperor Frederick II in 1233. He turned it into a fortified castle, and it served as an important part of his defensive system in southern Italy.
+> 
+> Example 2
+> Q: Did Leonardo da Vinci have a connection to the Castello Sforzesco in Milan?
+> A: Yes. Leonardo da Vinci worked at the court of Ludovico il Moro and contributed to the design and decoration of the Castello Sforzesco, including engineering works and artistic commissions.
+> 
+> Q: Is there a historical relationship between Caterina Sforza and the Rocca di Imola or the Rocca di Ravaldino?
+
+ChatGPT's answer: 
+
+![Screen Chat Connection](screen_chat_connection.png)
+
+Gemini's answer: 
+
+![Screen Gemini Connection](screen_gemini_connection.png)
+
+Both large language models <mark>confirmed the historical connection</mark> between [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) and the two fortresses.
 
 ## Triples
 

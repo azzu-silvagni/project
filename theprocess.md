@@ -93,50 +93,6 @@ Among the four properties, we selected <mark>the third one</mark>, as it was the
 
 ![Portrait Caterina Sforza](ritratto_caterina.png)
 
-## First Triple
-
-From this, an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
-
-<!-- QUERY BOX - con wrapping migliorato -->
-<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
-PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
-
-CONSTRUCT {
-  &lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;
-  foaf:depiction
-  &lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt; .
-}
-WHERE {
-  FILTER(REGEX("Caterina Sforza", "Caterina Sforza", "i"))
-}
-</div>
-
-<!-- Immagine -->
-<img src="first_triple.png" alt="First Triple" style="max-width: 100%; height: auto; margin-bottom: 1em;">
-
-<!-- Tabella con colonne strette e avvolgimento testo -->
-<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Predicate</th>
-      <th>Object</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Caterina Sforza</td>
-      <td>foaf:depiction</td>
-      <td>Ritratto di Caterina Sforza</td>
-    </tr>
-    <tr>
-      <td><code>&lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;</code></td>
-      <td><code>&lt;http://xmlns.com/foaf/0.1/&gt;</code></td>
-      <td><code>&lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt;</code></td>
-    </tr>
-  </tbody>
-</table>
-
 ## Exploring the Fortresses
 
 To identify the types of architectural heritage present in the ArCo Knowledge Graph, we first executed a **SPARQL query** aimed at listing all distinct **types of architectural assets**.
@@ -272,16 +228,143 @@ As already stated before, all the results were <mark>false</mark>.
 
 ### Designation in time
 
-As concerns the designation in time, we submitted the following prompts to both Gemini and ChatGPT, the two LLMs selected for our project. 
+As concerns the designation in time, we submitted the following **zero-shot prompts** to both [Gemini](https://gemini.google.com/?hl=en) and [ChatGPT](https://openai.com/index/chatgpt/), the two LLMs selected for our project. 
 
 > When was the Fortress of Ravaldino built?
 
 > When was the Fortress of Imola built?
 
-With the aim of obtaining the most accurate and reliable information possible, we cross-checked the construction dates of the two fortresses using the following **online sources**:
+With the aim of obtaining the most accurate and reliable information possible, we cross-checked the **construction dates** of the two fortresses using the following **online sources**:
 
 **Rocca di Ravaldino** ➡️ <https://turismoforlivese.it/it/arte-cultura/rocca-di-ravaldino/> 
 
 **Rocca di Imola** ➡️ <https://imolamusei.it/rocca-sforzesca/> 
 
-After consulting these sources, we found that Gemini was accurate regarding the Fortress of Ravaldino, whereas ChatGPT provided incorrect information. In the case of the Fortress of Imola, Gemini was again correct, while ChatGPT, although not entirely inaccurate, offered a less precise response.
+After consulting these sources, we found that <mark>Gemini was accurate</mark> regarding the **Fortress of Ravaldino**, whereas <mark>ChatGPT provided incorrect information</mark>. In the case of the **Fortress of Imola**, <mark>Gemini was again correct</mark>, while ChatGPT, although not entirely inaccurate, offered a <mark>less precise response</mark>.
+
+The following screenshots show Gemini's and ChatGPT's anwers regarding the depiction in time: 
+
+![Screenshot Gemini Ravaldino Time](screen_gemini_ravaldino_time.png)
+
+![Screenshot Chat Ravaldino Time](screen_chat_ravaldino_time.png)
+
+![Screenshot Gemini Imola Time](screen_gemini_imola_time.png)
+
+![Screenshot Chat Imola Time](screen_chat_imola_time.png)
+
+## Committent
+
+As concerns the commissioner, we opted for **a combination of <mark>few-shot and chain-of-thought</mark> prompting** techniques.
+
+We provided the language model with **two structured examples** that not only presented a **possible commissioner**, but also demonstrated a logical, **step-by-step reasoning process** based on historical and political context. This hybrid strategy was chosen to encourage the model to both recognize the expected format (through few-shot examples) and engage in contextual reasoning (via chain-of-thought prompting).
+
+**Fortress of Imola**: 
+
+> Below are two examples of how to reason step by step when identifying the commissioner of a historical fortress.
+>
+> Example 1:
+> Q: Who commissioned the Rocca di Forlimpopoli?
+> A:
+> 1. The Rocca di Forlimpopoli was built in the mid-14th century.
+> 2. During that time, the city was controlled by the Ordelaffi family.
+> 3. The Ordelaffi were known for fortifying their domains to protect against rival families.
+> 4. Therefore, it is likely that the fortress was commissioned by the ruling Ordelaffi family, probably under Sinibaldo Ordelaffi.
+> 
+> Example 2:
+> Q: Who commissioned the Castello Estense in Ferrara?
+> A:
+> 1. The Castello Estense was constructed starting in 1385.
+> 2. That year, a popular revolt broke out in Ferrara, threatening the Este family.
+> 3. Niccolò II d'Este decided to build the fortress as a defensive structure adjacent to the city palace.
+> 4. Thus, Niccolò II d'Este was the commissioner of the castle.
+> 
+> Now answer this question using the same format:
+> Q: Who commissioned the Rocca di Imola?
+
+Gemini's answer: 
+
+![Screenshot Gemini Imola Committent](screen_gemini_imola_comm.png)
+
+ChatGPT's answer: 
+
+![Screenshot Chat Imola Committent](screen_chat_imola_comm.png)
+
+However, according to the [official website of Imola Musei](https://imolamusei.it/rocca-sforzesca/), both answers were wrong. We got the right answer through a zero-shot prompt.
+
+![Screenshot Imola Committent](screen_imola_comm.png)
+
+**Fortress of Ravaldino**: 
+
+> I will give you some examples of Italian castles or fortresses along with their historical patron, followed by a brief explanation of the historical context in which they were built or renovated.
+> 
+> Example 1:  
+> Work: Castello Sforzesco  
+> Patron: Francesco Sforza  
+> Context: After becoming Duke of Milan, Francesco Sforza began the reconstruction of the castle in 1450 as a symbol of his power. It was a time of political instability, and castles served both defensive and symbolic purposes.
+> 
+> Example 2:  
+> Work: Fortezza Medicea di Arezzo  
+> Patron: Cosimo I de’ Medici  
+> Context: Built to reinforce Medici control over the city and symbolize Grand Ducal dominance during the 16th century. The project started as part of a wider effort to consolidate power.
+> 
+> Now, please analyze the following case using the same format.
+> 
+> Work: Rocca di Ravaldino (Forlì)  
+> Patron:  
+> Context:
+
+Gemini's answer: 
+
+![Screenshot Gemini Ravaldino Committent](screen_gemini_ravaldino_comm.png)
+
+ChatGPT's answer: 
+
+![Screenshot Chat Ravaldino Committent](screen_chat_ravaldino_comm.png)
+
+After cross-checking both answers with the [official website of Turismo Forlivese](https://turismoforlivese.it/it/arte-cultura/rocca-di-ravaldino/), we noticed that <mark>GhatGPT's answer was wrong</mark>, whereas <mark>Gemini's answer was true</mark>. 
+
+## Triples
+
+### First Triple
+
+From this, an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
+
+<!-- QUERY BOX - con wrapping migliorato -->
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+
+CONSTRUCT {
+  &lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;
+  foaf:depiction
+  &lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt; .
+}
+WHERE {
+  FILTER(REGEX("Caterina Sforza", "Caterina Sforza", "i"))
+}
+</div>
+
+<!-- Immagine -->
+<img src="first_triple.png" alt="First Triple" style="max-width: 100%; height: auto; margin-bottom: 1em;">
+
+<!-- Tabella con colonne strette e avvolgimento testo -->
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Caterina Sforza</td>
+      <td>foaf:depiction</td>
+      <td>Ritratto di Caterina Sforza</td>
+    </tr>
+    <tr>
+      <td><code>&lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;</code></td>
+      <td><code>&lt;http://xmlns.com/foaf/0.1/&gt;</code></td>
+      <td><code>&lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt;</code></td>
+    </tr>
+  </tbody>
+</table>

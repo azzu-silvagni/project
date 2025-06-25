@@ -421,11 +421,13 @@ After all the work retrieved from the step [Depiction of Caterina](#depiction-of
 The **zero-shot prompt** given to create the SPARQL CONSTRUCT query was the following: 
 
 > We are working on a cultural heritage knowledge graph using SPARQL. 
+>
 > Generate a SPARQL CONSTRUCT query and a corresponding RDF triple in Turtle syntax that links the following agent to a depiction using the foaf:depiction predicate.
 > The agent is identified by the IRI: 
 > https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530.
 > The depiction is an image located at the IRI: 
 > https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg.
+>
 > Use standard RDF prefixes (e.g., foaf, rdf, rdfs). First, provide the CONSTRUCT query, then the RDF triple in Turtle syntax.
 
 We obtained the following CONSTRUCT query: 
@@ -439,8 +441,6 @@ WHERE {
   # This CONSTRUCT query will always produce the triple.
 }
 </div>
-
-<img src="first_triple.png" alt="First Triple" style="max-width: 100%; height: auto; margin-bottom: 1em;">
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
@@ -473,10 +473,12 @@ After retrieving the information from the [Designation in Time](#designation-in-
 The **zero-shot prompt** used to create the query was the following:
 
 > We are working on a cultural heritage knowledge graph using SPARQL. 
+>
 > The Rocca di Imola was built in 1261. Please write a SPARQL CONSTRUCT query that creates an RDF triple with: 
 > Subject: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> 
 > Predicate: arco:hasDesignationInTime 
 > Object: "1261"^^xsd:gYear 
+>
 > Include all necessary PREFIX declarations.
 
 We obtained the following COSTRUCT query: 
@@ -518,15 +520,17 @@ Triple obtained:
 
 **Designation In Time - Rocca di Ravaldino**
 
-The same approach was applied to the Rocca di Ravaldino. 
+The same approach was applied to the **Fortress of Ravaldino** and its **construction date**, that is **1471**. 
 
-The zero-shot prompt used to create the query was the following:
+The **zero-shot** prompt used to create the query was the following:
 
 > We are working on a cultural heritage knowledge graph using SPARQL.
+>
 > The Rocca di Ravaldino was built in 1471. Please write a SPARQL CONSTRUCT query that creates an RDF triple with:
 > Subject: http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino 
 > Predicate: arco:hasDesignationInTime
 > Object: "1471"
+>
 > Include all necessary PREFIX declarations.
 
 We obtained the following CONSTRUCT query: 
@@ -579,6 +583,7 @@ After retrieving the information from the [Committent](#committent) step, we ask
 The **chain-of-thought prompt** used to create the query was the following:
 
 > Let’s think step by step.
+>
 > We are working with RDF triples using the ArCo ontology.
 > We want to indicate that the Rocca di Imola was commissioned by the Comune di Imola.
 > The subject is the Rocca di Imola, whose IRI is: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
@@ -639,10 +644,12 @@ Since [Pino III Ordelaffi](https://it.wikipedia.org/wiki/Pino_III_Ordelaffi) is 
 The **chain-of-thought prompt** used to create the query was the following:
 
 > Let’s think step by step.
+>
 > We are working with RDF triples using ArCo ontology.
 > The subject is the Rocca di Ravaldino in Forlì. This is the resource: http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino>
 > The predicate is the property used in ArCo to indicate the commissioner of a cultural heritage site:a-cd:hasCommittent
 > The object is the person who historically commissioned the fortress: Pino III Ordelaffi. Since he is not present in ArCo, we mint a new IRI: <https://w3id.org/arco/resource/Agent/pino-iii-ordelaffi>
+>
 > Now write a SPARQL CONSTRUCT query that creates this triple. Use the correct syntax and include any necessary prefix.
 
 We obtained the following CONSTRUCT query:
@@ -691,12 +698,14 @@ After retrieving the information from the [Cultural Events](#cultural-events) st
 The **zero-shot prompt** used to create the query was the following:
 
 > We are working with the ArCo and CIS ontologies and need to represent that a cultural property is involved in a cultural event. 
+>
 > Please generate: 
 > a SPARQL CONSTRUCT query 
 > and the corresponding RDF triple in Turtle syntax 
 > Subject: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> 
 > Predicate: cis:isInvolvedInCulturalEvent 
 > Object: <https://w3id.org/arco/resource/Event/eve-s56-rsef18b> 
+>
 > Make sure to use the correct prefixes and return only the CONSTRUCT query and the Turtle triple.
 
 We obtained the following CONSTRUCT query:
@@ -745,12 +754,14 @@ The same process was applied to the **Fortress of Ravaldino** and its **cultural
 The **zero-shot prompt** used to create the query was the following:
 
 > We are working with the ArCo and CIS ontologies and need to represent that a cultural property is involved in a cultural event. 
+>
 > Please generate: 
 > a SPARQL CONSTRUCT query 
 > and the corresponding RDF triple in Turtle syntax 
 > Subject: <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino> 
 > Predicate: cis:isInvolvedInCulturalEvent 
 > Object: <https://w3id.org/arco/resource/Event/eve-s56-rsef18b> 
+>
 > Make sure to use the correct prefixes and return only the CONSTRUCT query and the Turtle triple.
 
 We obtained the following CONSTRUCT query:
@@ -792,6 +803,109 @@ Triple obtained:
 
 **Connection to Caterina Sforza - Rocca di Imola**
 
+After retrieving the information from the [Connection to Caterina Sforza](#connection-to-caterina-sforza) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the **Fortress of Imola** to **Caterina Sforza**.
+
+The **zero-shot prompt** used to create the query was the following:
+
+> We are working on a cultural heritage knowledge graph using SPARQL.
+>
+> We want to connect the Rocca di Imola to Caterina Sforza. Please write a SPARQL CONSTRUCT query and create an RDF triple using Turtle syntax with:
+> Subject: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
+> Predicate: arco:hasRelatedAgent 
+> Object: https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530
+>
+> Include all necessary PREFIX declarations.
+
+We obtained the following CONSTRUCT query: 
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX cd: <https://w3id.org/arco/ontology/context-description/>
+
+CONSTRUCT {
+  <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
+    cd:hasRelatedAgent
+    <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530> .
+}
+WHERE {
+  <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530> ?p ?o .
+}
+</div>
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Imola</td>
+      <td>hasRelatedAgent</td>
+      <td>Caterina Sforza</td>
+    </tr>
+    <tr>
+      <td><code>&lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242119&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/context-description/hasRelatedAgent&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
 ### Ninth Triple
 
 **Connection to Caterina Sforza - Rocca di Ravaldino**
+
+The same steps were applied to the **Fortress of Ravaldino**. 
+
+The **zero-shot prompt** used to create the query was the following:
+
+> We are working on a cultural heritage knowledge graph using SPARQL.
+>
+> We want to connect the Rocca di Ravaldino to Caterina Sforza. Please write a SPARQL CONSTRUCT query and create an RDF triple using Turtle syntax with:
+> Subject: http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino
+> Predicate: arco:hasRelatedAgent 
+> Object: https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530
+>
+> Include all necessary PREFIX declarations.
+
+We obtained the following CONSTRUCT query: 
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX arco: <https://w3id.org/arco/ontology/core/>
+
+CONSTRUCT {
+  <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino>
+    arco:hasRelatedAgent <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530> .
+}
+WHERE {
+}
+</div>
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Ravaldino</td>
+      <td>hasRelatedAgent</td>
+      <td>Caterina Sforza</td>
+    </tr>
+    <tr>
+      <td><code>&lt;http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/context-description/hasRelatedAgent&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;</code></td>
+    </tr>
+  </tbody>
+</table>

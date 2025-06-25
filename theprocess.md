@@ -578,9 +578,113 @@ Triple obtained:
 
 **Committent - Rocca di Imola**
 
+After retrieving the information from the [Committent](#committent) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the Fortress of Imola to its **commissioner**, identified as Comune di Imola.
+
+The **chain-of-thought prompt** used to create the query was the following:
+
+> Let’s think step by step.
+> We are working with RDF triples using the ArCo ontology.
+> We want to indicate that the Rocca di Imola was commissioned by the Comune di Imola.
+> The subject is the Rocca di Imola, whose IRI is: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
+> The predicate is the ArCo property used to express who commissioned a cultural heritage site:a-cd:hasCommittent
+> The object is the Comune di Imola, which exists in ArCo with the following IRI: <https://w3id.org/arco/resource/Agent/d801d3392b7a87fb2af08dfda818d475>
+> 
+> Now:
+> First, write a SPARQL CONSTRUCT query to generate this triple.
+> Then, write the resulting triple in Turtle syntax.
+> Include all necessary prefixes.
+
+We obtained the following CONSTRUCT query:
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/>
+PREFIX arco: <https://w3id.org/arco/resource/>
+
+CONSTRUCT {
+  <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
+    a-cd:hasCommittent
+    <https://w3id.org/arco/resource/Agent/d801d3392b7a87fb2af08dfda818d475> .
+}
+WHERE {
+}
+</div>
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Imola</td>
+      <td>hasCommittent</td>
+      <td>Comune di Imola</td>
+    </tr>
+    <tr>
+      <td><code>&lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/context-description/hasCommittent&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/resource/Agent/d801d3392b7a87fb2af08dfda818d475&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
 ### Fifth Triple
 
 **Committent - Rocca di Ravaldino**
+
+The same process was applied to the Fortress of Ravaldino and its **commissioner**, **Pino III Ordelaffi**.
+Since Pino III Ordelaffi is not present in ArCo, we instructed the LLMs to take his absence into account, and we minted a new IRI to represent him.
+
+The **chain-of-thought prompt** used to create the query was the following:
+
+> Let’s think step by step.
+> We are working with RDF triples using ArCo ontology.
+> The subject is the Rocca di Ravaldino in Forlì. This is the resource: http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino>
+> The predicate is the property used in ArCo to indicate the commissioner of a cultural heritage site:a-cd:hasCommittent
+> The object is the person who historically commissioned the fortress: Pino III Ordelaffi. Since he is not present in ArCo, we mint a new IRI: <https://w3id.org/arco/resource/Agent/pino-iii-ordelaffi>
+> Now write a SPARQL CONSTRUCT query that creates this triple. Use the correct syntax and include any necessary prefix.
+
+We obtained the following CONSTRUCT query:
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/>
+
+CONSTRUCT {
+  <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino>
+    a-cd:hasCommittent <https://w3id.org/arco/resource/Agent/pino-iii-ordelaffi> .
+}
+WHERE {
+}
+</div>
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Ravaldino</td>
+      <td>hasCommittent</td>
+      <td>Pino III Ordelaffi</td>
+    </tr>
+    <tr>
+      <td><code>&lt;http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/context-description/hasCommittent&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/resource/Agent/pino-iii-ordelaffi&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Sixth Triple
 

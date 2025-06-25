@@ -522,6 +522,58 @@ Triple obtained:
 
 **Designation In Time - Rocca di Ravaldino**
 
+The same approach was applied to the Rocca di Ravaldino. 
+
+The zero-shot prompt used to create the query was the following:
+
+> We are working on a cultural heritage knowledge graph using SPARQL.
+> The Rocca di Ravaldino was built in 1471. Please write a SPARQL CONSTRUCT query that creates an RDF triple with:
+> Subject: http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino 
+> Predicate: arco:hasDesignationInTime
+> Object: "1471"
+> Include all necessary PREFIX declarations.
+
+![Construct Chat Ravaldino Time](construct_chat_ravaldino_time.png)
+
+We obtained the following CONSTRUCT query: 
+
+PREFIX arco: <https://w3id.org/arco/ontology/arco/>
+PREFIX ti: <https://w3id.org/arco/ontology/time/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino> arco:hasDesignationInTime [
+    ti:time "1471"^^xsd:gYear
+  ] .
+}
+WHERE {
+}
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Ravaldino</td>
+      <td>hasDesignationInTime</td>
+      <td>14711</td>
+    </tr>
+    <tr>
+      <td><code>&lt;http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/denotative-description/DesignationInTime
+&gt;</code></td>
+      <td><code>&lt;1471"^^xsd:gYear&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
 ### Fourth Triple
 
 **Committent - Rocca di Imola**

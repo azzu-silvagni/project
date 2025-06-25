@@ -416,7 +416,7 @@ Both large language models <mark>confirmed the historical connection</mark> betw
 
 **Depiction of Caterina Sforza**
 
-After all the work retrieved from the step [Depiction of Caterina](#depiction-of-caterina-sforza), an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
+After all the work retrieved from the step [Depiction of Caterina](#depiction-of-caterina-sforza), an **image** was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
 
 The **zero-shot prompt** given to create the SPARQL CONSTRUCT query was the following: 
 
@@ -468,7 +468,7 @@ WHERE {
 
 **Designation In Time - Rocca di Imola**
 
-After retrieving the information from the [Designation in Time](#designation-in-time) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the Fortress of Imola to its **date of construction**, identified as 1261.
+After retrieving the information from the [Designation in Time](#designation-in-time) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the **Fortress of Imola** to its **date of construction**, identified as **1261**.
 
 The **zero-shot prompt** used to create the query was the following:
 
@@ -478,10 +478,6 @@ The **zero-shot prompt** used to create the query was the following:
 > Predicate: arco:hasDesignationInTime 
 > Object: "1261"^^xsd:gYear 
 > Include all necessary PREFIX declarations.
-
-![Construct Gemini Imola Time](construct_gemini_imola_time.png)
-
-![Construct Chat Imola Time](construct_chat_imola_time.png)
 
 We obtained the following COSTRUCT query: 
 
@@ -533,10 +529,9 @@ The zero-shot prompt used to create the query was the following:
 > Object: "1471"
 > Include all necessary PREFIX declarations.
 
-![Construct Chat Ravaldino Time](construct_chat_ravaldino_time.png)
-
 We obtained the following CONSTRUCT query: 
 
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
 PREFIX ti: <https://w3id.org/arco/ontology/time/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -548,6 +543,7 @@ CONSTRUCT {
 }
 WHERE {
 }
+</div>
 
 Triple obtained: 
 
@@ -578,7 +574,7 @@ Triple obtained:
 
 **Committent - Rocca di Imola**
 
-After retrieving the information from the [Committent](#committent) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the Fortress of Imola to its **commissioner**, identified as Comune di Imola.
+After retrieving the information from the [Committent](#committent) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the **Fortress of Imola** to its **commissioner**, identified as [**Comune di Imola**](https://www.comune.imola.bo.it/).
 
 The **chain-of-thought prompt** used to create the query was the following:
 
@@ -638,7 +634,7 @@ Triple obtained:
 **Committent - Rocca di Ravaldino**
 
 The same process was applied to the Fortress of Ravaldino and its **commissioner**, **Pino III Ordelaffi**.
-Since Pino III Ordelaffi is not present in ArCo, we instructed the LLMs to take his absence into account, and we minted a new IRI to represent him.
+Since [Pino III Ordelaffi](https://it.wikipedia.org/wiki/Pino_III_Ordelaffi) is not present in [ArCo](https://dati.beniculturali.it/arco/index.php), we instructed the LLMs to take his absence into account, and we minted a new IRI to represent him.
 
 The **chain-of-thought prompt** used to create the query was the following:
 
@@ -690,9 +686,107 @@ Triple obtained:
 
 **Cultural Events - Rocca di Imola**
 
+After retrieving the information from the [Cultural Events](#cultural-events) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the **Fortress of Imola** to its **cultural event**: **visit to the castle**.
+
+The **zero-shot prompt** used to create the query was the following:
+
+> We are working with the ArCo and CIS ontologies and need to represent that a cultural property is involved in a cultural event. 
+> Please generate: 
+> a SPARQL CONSTRUCT query 
+> and the corresponding RDF triple in Turtle syntax 
+> Subject: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> 
+> Predicate: cis:isInvolvedInCulturalEvent 
+> Object: <https://w3id.org/arco/resource/Event/eve-s56-rsef18b> 
+> Make sure to use the correct prefixes and return only the CONSTRUCT query and the Turtle triple.
+
+We obtained the following CONSTRUCT query:
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX arco: <https://w3id.org/arco/ontology/arco/>
+PREFIX cis: <http://dati.beniculturali.it/cis/>
+
+CONSTRUCT {
+  <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> cis:isInvolvedInCulturalEvent <https://w3id.org/arco/resource/Event/eve-s56-rsef18b> .
+}
+WHERE {
+}
+</div>
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Imola</td>
+      <td>isInvolvedInCulturalEvent</td>
+      <td>Visita del Castello</td>
+    </tr>
+    <tr>
+      <td><code>&lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242119&gt;</code></td>
+      <td><code>&lt;http://dati.beniculturali.it/cis/isInvolvedInCulturalEvent&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/resource/Event/eve-s56-rsef18b&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
 ### Seventh Triple
 
 **Cultural Events - Rocca di Ravaldino**
+
+The same process was applied to the **Fortress of Ravaldino** and its **cultural event**, the **visit to the castle**. 
+
+The **zero-shot prompt** used to create the query was the following:
+
+> We are working with the ArCo and CIS ontologies and need to represent that a cultural property is involved in a cultural event. 
+> Please generate: 
+> a SPARQL CONSTRUCT query 
+> and the corresponding RDF triple in Turtle syntax 
+> Subject: <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino> 
+> Predicate: cis:isInvolvedInCulturalEvent 
+> Object: <https://w3id.org/arco/resource/Event/eve-s56-rsef18b> 
+> Make sure to use the correct prefixes and return only the CONSTRUCT query and the Turtle triple.
+
+We obtained the following CONSTRUCT query:
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX arco: <https://w3id.org/arco/ontology/arco/> 
+PREFIX cis: <http://dati.beniculturali.it/cis/> 
+CONSTRUCT { <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino> cis:isInvolvedInCulturalEvent <https://w3id.org/arco/resource/Event/eve-s56-rsef18b> . 
+} 
+WHERE { 
+}
+</div>
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Ravaldino</td>
+      <td>isInvolvedInCulturalEvent</td>
+      <td>Visita del Castello</td>
+    </tr>
+    <tr>
+      <td><code>&lt;http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino&gt;</code></td>
+      <td><code>&lt;http://dati.beniculturali.it/cis/isInvolvedInCulturalEvent&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/resource/Event/eve-s56-rsef18b&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Eighth Triple
 

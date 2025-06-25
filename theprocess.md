@@ -442,6 +442,10 @@ WHERE {
 }
 </div>
 
+Triple obtained: 
+
+![First Triple](first_triple-png)
+
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
     <tr>
@@ -612,6 +616,8 @@ WHERE {
 
 Triple obtained: 
 
+![Fourth Triple](fourth_triple.png)
+
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
     <tr>
@@ -666,6 +672,8 @@ WHERE {
 </div>
 
 Triple obtained: 
+
+![Fifth Triple](fifth_triple-png)
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
@@ -723,6 +731,8 @@ WHERE {
 
 Triple obtained: 
 
+![Sixth Triple](sixth_triple.png)
+
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
     <tr>
@@ -776,6 +786,8 @@ WHERE {
 </div>
 
 Triple obtained: 
+
+![Seventh Triple](seventh_triple.png)
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
@@ -833,6 +845,8 @@ WHERE {
 
 Triple obtained: 
 
+![Eighth Triple](eighth_triple.png)
+
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
     <tr>
@@ -887,6 +901,8 @@ WHERE {
 </div>
 
 Triple obtained: 
+
+![Ninth Triple](ninth_triple.png)
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>

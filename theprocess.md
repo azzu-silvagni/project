@@ -414,7 +414,8 @@ Both large language models <mark>confirmed the historical connection</mark> betw
 
 ### First Triple
 
-**Depiction of Caterina Sforza** 
+**Depiction of Caterina Sforza**
+
 After all the work retrieved from the step [Depiction of Caterina](#depiction-of-caterina-sforza), an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
 
 The **zero-shot prompt** given to create the SPARQL CONSTRUCT query was the following: 
@@ -466,6 +467,56 @@ WHERE {
 ### Second Triple
 
 **Designation In Time - Rocca di Imola**
+
+After retrieving the information from the [Designation in Time](#designation-in-time) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the Fortress of Imola to its **date of construction**, identified as 1261.
+
+The **zero-shot prompt** used to create the query was the following:
+
+> We are working on a cultural heritage knowledge graph using SPARQL. 
+> The Rocca di Imola was built in 1261. Please write a SPARQL CONSTRUCT query that creates an RDF triple with: 
+> Subject: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> 
+> Predicate: arco:hasDesignationInTime 
+> Object: "1261"^^xsd:gYear 
+> Include all necessary PREFIX declarations.
+
+![Construct Gemini Imola Time](construct_gemini_imola_time.png)
+
+![Construct Chat Imola Time](construct_chat_imola_time.png)
+
+We obtained the following COSTRUCT query: 
+
+<div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+CONSTRUCT {
+  <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> arco:hasDesignationInTime "1261"^^xsd:gYear .
+}
+WHERE {
+}
+</div>
+
+Triple obtained: 
+
+<table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Predicate</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rocca di Imola</td>
+      <td>hasDesignationInTime</td>
+      <td>1261</td>
+    </tr>
+    <tr>
+      <td><code>&lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/denotative-description/DesignationInTime
+&gt;</code></td>
+      <td><code>&lt;1261"^^xsd:gYear&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Third Triple
 

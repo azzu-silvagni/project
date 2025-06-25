@@ -226,6 +226,8 @@ ASK {
 
 As already stated before, <mark>all the results were false</mark>.
 
+***
+
 ## Use of LLMs
 
 ### Designation in time
@@ -406,30 +408,39 @@ Gemini's answer:
 
 Both large language models <mark>confirmed the historical connection</mark> between [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) and the two fortresses.
 
+***
+
 ## Triples
 
 ### First Triple
 
-From this, an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
+**Depiction of Caterina Sforza** 
+After all the work retrieved from the step [Depiction of Caterina](#depiction-of-caterina-sforza), an image was identified and associated with Caterina using a **CONSTRUCT query**, which allows the creation of new RDF triples to enrich the graph.
 
-<!-- QUERY BOX - con wrapping migliorato -->
+The **zero-shot prompt** given to create the SPARQL CONSTRUCT query was the following: 
+
+> We are working on a cultural heritage knowledge graph using SPARQL. 
+> Generate a SPARQL CONSTRUCT query and a corresponding RDF triple in Turtle syntax that links the following agent to a depiction using the foaf:depiction predicate.
+> The agent is identified by the IRI: 
+> https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530.
+> The depiction is an image located at the IRI: 
+> https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg.
+> Use standard RDF prefixes (e.g., foaf, rdf, rdfs). First, provide the CONSTRUCT query, then the RDF triple in Turtle syntax.
+
+We obtained the following CONSTRUCT query: 
+
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
-PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
-
 CONSTRUCT {
-  &lt;https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530&gt;
-  foaf:depiction
-  &lt;https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg&gt; .
+  <https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530> foaf:depiction <https://www.sigecweb.beniculturali.it/images/fullsize/ICCD50007125/ICCD5194406_16411.jpg> .
 }
 WHERE {
-  FILTER(REGEX("Caterina Sforza", "Caterina Sforza", "i"))
+  # No specific WHERE clause is needed if we are just asserting a new fact.
+  # This CONSTRUCT query will always produce the triple.
 }
 </div>
 
-<!-- Immagine -->
 <img src="first_triple.png" alt="First Triple" style="max-width: 100%; height: auto; margin-bottom: 1em;">
 
-<!-- Tabella con colonne strette e avvolgimento testo -->
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
     <tr>
@@ -451,3 +462,35 @@ WHERE {
     </tr>
   </tbody>
 </table>
+
+### Second Triple
+
+**Designation In Time - Rocca di Imola**
+
+### Third Triple
+
+**Designation In Time - Rocca di Ravaldino**
+
+### Fourth Triple
+
+**Committent - Rocca di Imola**
+
+### Fifth Triple
+
+**Committent - Rocca di Ravaldino**
+
+### Sixth Triple
+
+**Cultural Events - Rocca di Imola**
+
+### Seventh Triple
+
+**Cultural Events - Rocca di Ravaldino**
+
+### Eighth Triple
+
+**Connection to Caterina Sforza - Rocca di Imola**
+
+### Ninth Triple
+
+**Connection to Caterina Sforza - Rocca di Ravaldino**

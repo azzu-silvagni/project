@@ -476,14 +476,14 @@ After retrieving the information from the [Designation in Time](#designation-in-
 
 The **zero-shot prompt** used to create the query was the following:
 
-> We are working on a cultural heritage knowledge graph using SPARQL. 
->
+> We are working on a cultural heritage knowledge graph using SPARQL.
+> 
 > The Rocca di Imola was built in 1261. Please write a SPARQL CONSTRUCT query that creates an RDF triple with: 
 > Subject: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> 
-> Predicate: arco:hasDesignationInTime 
-> Object: "1261"^^xsd:gYear 
->
-> Include all necessary PREFIX declarations.
+> Predicate: arco:hasDating 
+> Object: "1261"^^xsd:gYear
+> 
+> First, provide the CONSTRUCT query, then the RDF triple in Turtle syntax. Include all necessary PREFIX declarations.
 
 We obtained the following COSTRUCT query: 
 
@@ -499,6 +499,8 @@ WHERE {
 
 Triple obtained: 
 
+![Second Triple](second_triple.png)
+
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
     <tr>
@@ -510,14 +512,13 @@ Triple obtained:
   <tbody>
     <tr>
       <td>Rocca di Imola</td>
-      <td>hasDesignationInTime</td>
+      <td>hasDating</td>
       <td>1261</td>
     </tr>
     <tr>
       <td><code>&lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914&gt;</code></td>
-      <td><code>&lt;https://w3id.org/arco/ontology/denotative-description/DesignationInTime
-&gt;</code></td>
-      <td><code>&lt;1261"^^xsd:gYear&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/context-description/hasDating&gt;</code></td>
+      <td><code>&lt;1261&gt;</code></td>
     </tr>
   </tbody>
 </table>
@@ -534,7 +535,7 @@ The **zero-shot** prompt used to create the query was the following:
 >
 > The Rocca di Ravaldino was built in 1471. Please write a SPARQL CONSTRUCT query that creates an RDF triple with:
 > Subject: http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino 
-> Predicate: arco:hasDesignationInTime
+> Predicate: arco:hasDating
 > Object: "1471"
 >
 > Include all necessary PREFIX declarations.
@@ -543,19 +544,17 @@ We obtained the following CONSTRUCT query:
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
-PREFIX ti: <https://w3id.org/arco/ontology/time/>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino> arco:hasDesignationInTime [
-    ti:time "1471"^^xsd:gYear
-  ] .
+  <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino> arco:hasDating "1471" .
 }
 WHERE {
 }
 </div>
 
 Triple obtained: 
+
+![Third Triple](third_triple.png)
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
@@ -568,13 +567,12 @@ Triple obtained:
   <tbody>
     <tr>
       <td>Rocca di Ravaldino</td>
-      <td>hasDesignationInTime</td>
+      <td>hasDating</td>
       <td>14711</td>
     </tr>
     <tr>
       <td><code>&lt;http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino&gt;</code></td>
-      <td><code>&lt;https://w3id.org/arco/ontology/denotative-description/DesignationInTime
-&gt;</code></td>
+      <td><code>&lt;https://w3id.org/arco/ontology/context-description/hasDating&gt;</code></td>
       <td><code>&lt;1471"^^xsd:gYear&gt;</code></td>
     </tr>
   </tbody>

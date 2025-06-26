@@ -5,7 +5,6 @@ title: The Project
 
 <div style="text-align: center; margin-bottom: 20px;">
   <a href="index.html">Home</a> |
-  <a href="theproject.html">The Project</a> |
   <a href="methodology.html">Methodology</a> |
   <a href="theprocess.html">The Process</a> |
   <a href="conclusions.html">Conclusions</a>
@@ -30,12 +29,12 @@ This was achieved through a combination of **SPARQL querying**, **semantic reaso
 
 A new set of **RDF triples** was proposed to enhance the existing representation of the two fortresses in the **ArCo KG**, specifically addressing the following aspects:
 
-- **Depiction**: associating the sites and the historical figure with relevant visual documentation
+- **Depiction**: associating [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) with visual documentation
 
-- **Date in Time**: specifying the construction period of the fortresses
+- **Dating**: specifying the construction period of the two fortresses
 
 - **Commissioner**: identifying key historical figures responsible for their construction or expansion
 
-- **Historical connections**: formalising semantic links between Caterina Sforza and the two sites
+- **Historical connections**: formalising semantic links between [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) and the two sites
 
 - **Cultural events**: investigating potential historical events related to the fortresses

@@ -172,7 +172,7 @@ ASK {
 We ran a series of **SPARQL ASK queries** to verify whether the two fortresses were already associated with certain semantic properties in the [ArCo](https://dati.beniculturali.it/arco/index.php) Knowledge Graph.
 This helped us detect gaps in the data and justify the use of LLMs and new RDF triples to enrich the graph.
 
-- **TEMPORAL DESIGNATION**
+- **TEMPORAL DATING**
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
 PREFIX arco: <https://w3id.org/arco/ontology/arco/>
@@ -180,13 +180,14 @@ PREFIX arco: <https://w3id.org/arco/ontology/arco/>
 ASK {
   {
     <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914>
-    arco:hasDesignationInTime ?date .
+    arco:hasDating ?date .
   }
   UNION
   {
     <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino>
-    arco:hasDesignationInTime ?date .
+    arco:hasDating ?date .
   }
+}
 </div>
 
 - **COMMITTENT**
@@ -230,9 +231,9 @@ As already stated before, <mark>all the results were false</mark>.
 
 ## Use of LLMs
 
-### Designation in time
+### Dating
 
-As concerns the designation in time, we submitted the following **zero-shot prompts** to both [Gemini](https://gemini.google.com/?hl=en) and [ChatGPT](https://openai.com/index/chatgpt/), the two LLMs selected for our project. 
+As concerns the dating, we submitted the following **zero-shot prompts** to both [Gemini](https://gemini.google.com/?hl=en) and [ChatGPT](https://openai.com/index/chatgpt/), the two LLMs selected for our project. 
 
 > When was the Fortress of Ravaldino built?
 
@@ -244,7 +245,7 @@ With the aim of obtaining the most accurate and reliable information possible, w
 
 **Rocca di Imola** ➡️ [Official website of Imola Musei](https://imolamusei.it/rocca-sforzesca/)
 
-The following screenshots show Gemini's and ChatGPT's anwers regarding the **depiction in time**: 
+The following screenshots show Gemini's and ChatGPT's anwers regarding the **dating**: 
 
 ![Screenshot Chat Ravaldino Time](screen_chat_ravaldino_time.png)
 

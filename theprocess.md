@@ -568,12 +568,12 @@ Triple obtained:
     <tr>
       <td>Rocca di Ravaldino</td>
       <td>hasDating</td>
-      <td>14711</td>
+      <td>1471</td>
     </tr>
     <tr>
       <td><code>&lt;http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino&gt;</code></td>
       <td><code>&lt;https://w3id.org/arco/ontology/context-description/hasDating&gt;</code></td>
-      <td><code>&lt;1471"^^xsd:gYear&gt;</code></td>
+      <td><code>&lt;1471&gt;</code></td>
     </tr>
   </tbody>
 </table>

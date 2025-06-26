@@ -7,8 +7,7 @@ title: Conclusions
   <a href="index.html">Home</a> |
   <a href="theproject.html">The Project</a> |
   <a href="methodology.html">Methodology</a> |
-  <a href="theprocess.html">The Process</a> |
-  <a href="conclusions.html">Conclusions</a>
+  <a href="theprocess.html">The Process</a> 
 </div>
 
 # CONCLUSIONS

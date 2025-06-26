@@ -7,7 +7,6 @@ title: The Process
   <a href="index.html">Home</a> |
   <a href="theproject">The Project</a> |
   <a href="methodology.html">Methodology</a> |
-  <a href="theprocess.html">The Process</a> |
   <a href="conclusions.html">Conclusions</a>
 </div>
 
@@ -445,7 +444,7 @@ WHERE {
 
 Triple obtained: 
 
-![First Triple](first_triple-png)
+![First Triple](first_triple.png)
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
@@ -471,7 +470,7 @@ Triple obtained:
 
 ### Second Triple
 
-**Designation In Time - Rocca di Imola**
+**Dating - Rocca di Imola**
 
 After retrieving the information from the [Designation in Time](#designation-in-time) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the **Fortress of Imola** to its **date of construction**, identified as **1261**.
 
@@ -489,8 +488,10 @@ The **zero-shot prompt** used to create the query was the following:
 We obtained the following COSTRUCT query: 
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
+PREFIX arco: <https://w3id.org/arco/ontology/arco/>
+
 CONSTRUCT {
-  <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> arco:hasDesignationInTime "1261"^^xsd:gYear .
+  <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> arco:hasDating "1261" .
 }
 WHERE {
 }
@@ -523,7 +524,7 @@ Triple obtained:
 
 ### Third Triple
 
-**Designation In Time - Rocca di Ravaldino**
+**Dating - Rocca di Ravaldino**
 
 The same approach was applied to the **Fortress of Ravaldino** and its **construction date**, that is **1471**. 
 
@@ -674,7 +675,7 @@ WHERE {
 
 Triple obtained: 
 
-![Fifth Triple](fifth_triple-png)
+![Fifth Triple](fifth_triple.png)
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>
@@ -846,7 +847,7 @@ WHERE {
 
 Triple obtained: 
 
-![Eighth Triple](eighth_triple.png)
+![Eighth Triple](eight_triple.png)
 
 <table style="table-layout: fixed; width: 100%; word-wrap: break-word;">
   <thead>

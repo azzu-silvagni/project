@@ -115,6 +115,7 @@ SELECT DISTINCT ?s ?label
 WHERE {
   ?s rdfs:label ?label .
   FILTER(REGEX(?label, "rocca", "i"))
+}
 </div>
 
 This helped us identify two resources relevant to our topic:
@@ -143,6 +144,8 @@ WHERE {
 }
 ORDER BY ?label
 </div>
+
+![Order By](order_by.png)
 
 ORDER BY allows us to alphabetically sort the fortresses — useful for future scaling (e.g., if we add more sites), and for implementing clean navigation on the GitHub website.
 
@@ -204,6 +207,7 @@ ASK {
     <http://dati.beniculturali.it/iccd/schede/resource/CulturalInstituteOrSite/S006699_Rocca_di_Ravaldino> 
     a-cd:hasCommittent ?committent .
   }
+}
 </div>
 
 - **CULTURAL EVENTS**
@@ -430,6 +434,8 @@ The **zero-shot prompt** given to create the SPARQL CONSTRUCT query was the foll
 >
 > Use standard RDF prefixes (e.g., foaf, rdf, rdfs). First, provide the CONSTRUCT query, then the RDF triple in Turtle syntax.
 
+![First Triple Gemini](first_triple_gemini.png)
+
 We obtained the following CONSTRUCT query: 
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
@@ -472,7 +478,7 @@ Triple obtained:
 
 **Dating - Rocca di Imola**
 
-After retrieving the information from the [Designation in Time](#designation-in-time) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the **Fortress of Imola** to its **date of construction**, identified as **1261**.
+After retrieving the information from the [Dating](#dating) step, we asked large language models to generate a SPARQL CONSTRUCT query that would link the **Fortress of Imola** to its **date of construction**, identified as **1261**.
 
 The **zero-shot prompt** used to create the query was the following:
 
@@ -481,9 +487,11 @@ The **zero-shot prompt** used to create the query was the following:
 > The Rocca di Imola was built in 1261. Please write a SPARQL CONSTRUCT query that creates an RDF triple with: 
 > Subject: <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800242914> 
 > Predicate: arco:hasDating 
-> Object: "1261"^^xsd:gYear
+> Object: "1261"
 > 
 > First, provide the CONSTRUCT query, then the RDF triple in Turtle syntax. Include all necessary PREFIX declarations.
+
+![Second Triple Gemini](second_triple_gemini.png)
 
 We obtained the following COSTRUCT query: 
 
@@ -539,6 +547,8 @@ The **zero-shot** prompt used to create the query was the following:
 > Object: "1471"
 >
 > Include all necessary PREFIX declarations.
+
+![Third Triple Gemini](third_triple_gemini.png)
 
 We obtained the following CONSTRUCT query: 
 
@@ -599,6 +609,10 @@ The **chain-of-thought prompt** used to create the query was the following:
 > Then, write the resulting triple in Turtle syntax.
 > Include all necessary prefixes.
 
+![Fourth Triple Chat 1](fourth_triple_chat1.png)
+
+![Fourth Triple Chat 2](fourth_triple_chat2.png)
+
 We obtained the following CONSTRUCT query:
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
@@ -658,6 +672,8 @@ The **chain-of-thought prompt** used to create the query was the following:
 >
 > Now write a SPARQL CONSTRUCT query that creates this triple. Use the correct syntax and include any necessary prefix.
 
+![Fifth Triple Chat](fifth_triple_chat.png)
+
 We obtained the following CONSTRUCT query:
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
@@ -715,6 +731,8 @@ The **zero-shot prompt** used to create the query was the following:
 > Object: <https://w3id.org/arco/resource/Event/eve-s56-rsef18b> 
 >
 > Make sure to use the correct prefixes and return only the CONSTRUCT query and the Turtle triple.
+
+![Sixth Triple Gemini](sixth_triple_gemini.png)
 
 We obtained the following CONSTRUCT query:
 
@@ -774,6 +792,8 @@ The **zero-shot prompt** used to create the query was the following:
 >
 > Make sure to use the correct prefixes and return only the CONSTRUCT query and the Turtle triple.
 
+![Seventh Triple Gemini](seventh_triple_gemini.png)
+
 We obtained the following CONSTRUCT query:
 
 <div style="border-left: 4px solid #007acc; background-color: #f0f8ff; padding: 10px; margin: 1em 0; font-family: monospace; white-space: pre-wrap; overflow-wrap: anywhere;">
@@ -827,6 +847,8 @@ The **zero-shot prompt** used to create the query was the following:
 > Object: https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530
 >
 > Include all necessary PREFIX declarations.
+
+![Eight Triple Chat](eight_triple_chat.png)
 
 We obtained the following CONSTRUCT query: 
 
@@ -886,6 +908,8 @@ The **zero-shot prompt** used to create the query was the following:
 > Object: https://w3id.org/arco/resource/Agent/cf402e9bbd5dd8372a35022c85259530
 >
 > Include all necessary PREFIX declarations.
+
+![Ninth Triple Chat](ninth_triple_chat.png)
 
 We obtained the following CONSTRUCT query: 
 

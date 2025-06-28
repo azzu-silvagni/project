@@ -147,7 +147,13 @@ ORDER BY ?label
 
 ![Order By](order_by.png)
 
+<details>
+  <summary><strong>Why ORDER BY?</strong> ⬇️</summary>
+
+<ol>
 ORDER BY allows us to alphabetically sort the fortresses — useful for future scaling (e.g., if we add more sites), and for implementing clean navigation on the GitHub website.
+</ol>
+</details>
 
 ## Checking for Links to Caterina Sforza
 

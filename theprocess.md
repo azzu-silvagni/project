@@ -32,6 +32,8 @@ Click on the highlighted sections below to explore each step of the process in d
 
 - [**Triples**](#triples)
 
+- [**Faced Challenges**](#faced-challenges)
+
 ## Identifying the Topic
 
 The project began by verifying the existence of [Caterina Sforza](https://en.wikipedia.org/wiki/Caterina_Sforza) within the [ArCo](https://dati.beniculturali.it/arco/index.php) knowledge graph. To do this, we executed a **first SPARQL ASK** query to check whether the resource was present:
@@ -955,3 +957,17 @@ Triple obtained:
     </tr>
   </tbody>
 </table>
+
+## Faced Challenges
+
+Throughout the development of this project, we encountered several challenges that tested our technical and strategic skills. These obstacles primarily concerned: 
+
+- **Virtuoso timeouts and instability**: the [ArCo SPARQL Editor](https://dati.cultura.gov.it/sparql) frequently returned timeout messages (especially with complex queries or constructs). This problem occured during many steps of the process.
+
+- **Unreliable responses from [LLMs](https://en.wikipedia.org/wiki/Large_language_model)**: some LLM outputs were inaccurate or inconsistent, especially during the [Dating](#dating) and [Committent](#committent) steps. 
+
+*What was our solution?* ➤ We had to cross-check the answers using trustworthy and official sources during the [Use of LLMs](#use-of-llms) step. 
+
+- **Non-existent IRI for historical figures**: [Pino III Ordelaffi](https://it.wikipedia.org/wiki/Pino_III_Ordelaffi), the commissioner of [Rocca di Ravaldino](https://it.wikipedia.org/wiki/Rocca_di_Ravaldino), was not present in the [ArCo](https://dati.beniculturali.it/arco/index.php) Knowledge Graph.
+
+*What was our solution?* ➤ We minted a new IRI following ArCo’s naming conventions to correctly model his relationship to the site. See [Committent](#committent) step. 

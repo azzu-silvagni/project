@@ -62,6 +62,7 @@ A typical SPARQL query can include the following components:
 <ol>
     <li><strong>FILTER</strong>: Applies conditions to narrow down the results based on specific criteria.</li>
     <li><strong>LIMIT</strong>: Sets a maximum number of results to be returned.</li>
+    <li><strong>OPTIONAL</strong>: Retrieves additional data if available, without excluding results when that data is missing.
     <li><strong>ORDER BY</strong>: Arranges the results according to one or more selected variables.</li>
     <li><strong>PREFIX</strong>: Declares abbreviations for long URIs, making the query more readable and concise.</li>
     <li><strong>REGEX</strong>: Uses regular expressions to filter results based on pattern matching.</li>

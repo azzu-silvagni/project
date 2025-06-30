@@ -60,7 +60,10 @@ It allows users to retrieve, filter, and explore structured data from knowledge 
 A typical SPARQL query can include the following components:
 
 <ol>
-    <li><strong>FILTER</strong>: Applies conditions to narrow down the results based on specific criteria.</li>
+   <li><strong>ASK</strong>: Returns a simple true/false indicating whether the query pattern matches any data.</li>
+   <li><strong>CONSTRUCT</strong>: Builds a new RDF graph from the matched data, based on a specified template.</li>
+   <li><strong>DISTINCT</strong>: Eliminates duplicate results, returning only unique combinations of the selected variables.</li>
+   <li><strong>FILTER</strong>: Applies conditions to narrow down the results based on specific criteria.</li>
     <li><strong>LIMIT</strong>: Sets a maximum number of results to be returned.</li>
     <li><strong>OPTIONAL</strong>: Retrieves additional data if available, without excluding results when that data is missing.</li>
     <li><strong>ORDER BY</strong>: Arranges the results according to one or more selected variables.</li>
